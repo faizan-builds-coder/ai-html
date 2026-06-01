@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Timeless Watches - Elegant Luxury Watch</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; background: #f0f0f0; }
+
+  .navbar {
+    background: #1a1f2e;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    height: 64px;
+    gap: 16px;
+  }
+  .brand {
+    color: #fff;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+  .search-wrap {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    max-width: 500px;
+  }
+  .search-wrap input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+  .search-wrap button {
+    background: #1a1f2e;
+    border: none;
+    color: #fff;
+    padding: 8px 14px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  .nav-links {
+    display: flex;
+    gap: 24px;
+    margin-left: auto;
+  }
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .nav-links a:hover { text-decoration: underline; }
+
+  .page {
+    padding: 30px 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .product-container {
+    display: flex;
+    gap: 24px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 24px;
+  }
+
+  .left { flex: 1; }
+  .main-img-wrap {
+    width: 100%;
+    height: 420px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .main-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.3s;
+  }
+  .thumbs {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .thumb {
+    width: 80px;
+    height: 60px;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.2s;
+  }
+  .thumb.active { border-color: #1a1f2e; }
+  .thumb:hover { border-color: #555; }
+  .thumb img { width: 100%; height: 100%; object-fit: cover; }
+
+  .right { width: 400px; }
+  .brand-name {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #888;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+  .product-title {
+    font-size: 30px;
+    font-weight: 700;
+    color: #1a1f2e;
+    margin-bottom: 12px;
+  }
+  .price-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .price { font-size: 24px; font-weight: 700; color: #1a1f2e; }
+  .old-price { font-size: 16px; color: #999; text-decoration: line-through; }
+  .badge {
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 4px;
+  }
+  .desc { font-size: 14px; color: #555; line-height: 1.7; margin-bottom: 16px; }
+  .stars { display: flex; align-items: center; gap: 4px; margin-bottom: 20px; }
+  .star { color: #f5a623; font-size: 20px; }
+  .rating-text { font-size: 13px; color: #555; margin-left: 4px; }
+
+  .qty-row { display: flex; align-items: center; margin-bottom: 16px; }
+  .qty-btn {
+    width: 38px;
+    height: 38px;
+    background: #1a1f2e;
+    color: #fff;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  .qty-btn:hover { background: #2d3551; }
+  .qty-input {
+    width: 52px;
+    height: 38px;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-left: none;
+    border-right: none;
+    font-size: 15px;
+    outline: none;
+  }
+  .add-btn {
+    width: 100%;
+    padding: 15px;
+    background: #1a1f2e;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 16px;
+  }
+  .add-btn:hover { background: #2d3551; }
+  .offer-box {
+    background: #f8f8f8;
+    border-radius: 8px;
+    padding: 18px;
+    text-align: center;
+    border: 1px solid #eee;
+  }
+  .offer-title { font-weight: 700; font-size: 15px; color: #1a1f2e; margin-bottom: 8px; }
+  .offer-desc { font-size: 13px; color: #555; margin-bottom: 14px; line-height: 1.6; }
+  .signup-btn {
+    background: #1a1f2e;
+    color: #fff;
+    border: none;
+    padding: 9px 22px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  .signup-btn:hover { background: #2d3551; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <span class="brand">TIMELESS WATCHES</span>
+  <div class="search-wrap">
+    <input type="text" placeholder="Search...">
+    <button>&#128269;</button>
+  </div>
+  <div class="nav-links">
+    <a href="#">Shop</a>
+    <a href="#">New Arrivals</a>
+    <a href="#">Brands</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </div>
+</nav>
+
+<div class="page">
+  <div class="product-container">
+
+    <div class="left">
+      <div class="main-img-wrap">
+        <img id="mainImg"
+          src="https://images.unsplash.com/photo-1547996160-81dfa63595aa?w=800&q=80"
+          alt="Elegant Luxury Watch">
+      </div>
+      <div class="thumbs">
+        <div class="thumb active" onclick="changeImg(this, 'https://images.unsplash.com/photo-1547996160-81dfa63595aa?w=800&q=80')">
+          <img src="https://images.unsplash.com/photo-1547996160-81dfa63595aa?w=200&q=80" alt="view 1">
+        </div>
+        <div class="thumb" onclick="changeImg(this, 'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=800&q=80')">
+          <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=200&q=80" alt="view 2">
+        </div>
+        <div class="thumb" onclick="changeImg(this, 'https://images.unsplash.com/photo-1526045612212-70caf35c14df?w=800&q=80')">
+          <img src="https://images.unsplash.com/photo-1526045612212-70caf35c14df?w=200&q=80" alt="view 3">
+        </div>
+        <div class="thumb" onclick="changeImg(this, 'https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=800&q=80')">
+          <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=200&q=80" alt="view 4">
+        </div>
+        <div class="thumb" onclick="changeImg(this, 'https://images.unsplash.com/photo-1612817288484-6f916006741a?w=800&q=80')">
+          <img src="https://images.unsplash.com/photo-1612817288484-6f916006741a?w=200&q=80" alt="view 5">
+        </div>
+        <div class="thumb" onclick="changeImg(this, 'https://images.unsplash.com/photo-1617396900799-f4ec2b43c7d3?w=800&q=80')">
+          <img src="https://images.unsplash.com/photo-1617396900799-f4ec2b43c7d3?w=200&q=80" alt="view 6">
+        </div>
+      </div>
+    </div>
+
+    <div class="right">
+      <p class="brand-name">Prestige Time Co.</p>
+      <h1 class="product-title">Elegant Luxury Watch</h1>
+      <div class="price-row">
+        <span class="price">$499.99</span>
+        <span class="old-price">$799.99</span>
+        <span class="badge">38% OFF</span>
+      </div>
+      <p class="desc">
+        This luxurious timepiece combines elegance with precision craftsmanship.
+        Perfect for formal occasions or everyday wear, it features premium
+        materials and impeccable design.
+      </p>
+      <div class="stars">
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="star">&#9733;</span>
+        <span class="rating-text">Rated 4.8/5 (256 reviews)</span>
+      </div>
+      <div class="qty-row">
+        <button class="qty-btn" onclick="changeQty(-1)">&#8722;</button>
+        <input class="qty-input" type="text" id="qty" value="1" readonly>
+        <button class="qty-btn" onclick="changeQty(1)">&#43;</button>
+      </div>
+      <button class="add-btn">Add to Bag</button>
+      <div class="offer-box">
+        <p class="offer-title">Limited-Time Offer!</p>
+        <p class="offer-desc">
+          Get an additional 10% off your first purchase when you
+          sign up for our newsletter.
+        </p>
+        <button class="signup-btn">Sign Up Now</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  function changeQty(d) {
+    var el = document.getElementById('qty');
+    var val = parseInt(el.value) + d;
+    if (val < 1) val = 1;
+    el.value = val;
+  }
+
+  function changeImg(thumb, url) {
+    document.getElementById('mainImg').src = url;
+    document.querySelectorAll('.thumb').forEach(function(t) {
+      t.classList.remove('active');
+    });
+    thumb.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
