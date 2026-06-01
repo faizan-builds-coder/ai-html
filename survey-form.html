@@ -1,0 +1,141 @@
+Here is a simple, clean HTML document that creates a basic survey form for freeCodeCamp feedback.
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>freeCodeCamp Survey</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 24px;
+        }
+        .sub {
+            text-align: center;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .radio-group, .checkbox-group {
+            margin-top: 5px;
+        }
+        .radio-group label, .checkbox-group label {
+            font-weight: normal;
+            display: inline-block;
+            margin-right: 15px;
+            margin-top: 0;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        hr {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Survey Form</h1>
+        <div class="sub">Let us know how we can improve freeCodeCamp</div>
+
+        <form id="surveyForm">
+            <label>Name:</label>
+            <input type="text" id="name" placeholder="Enter your name">
+
+            <label>Email:</label>
+            <input type="email" id="email" placeholder="Enter your Email">
+
+            <label>Age:</label>
+            <input type="text" id="age" placeholder="Age">
+
+            <label>Which option best describes your current role?</label>
+            <select id="role">
+                <option value="">Select</option>
+                <option>Student</option>
+                <option>Professional</option>
+                <option>Other</option>
+            </select>
+
+            <label>How likely is that you would recommend freeCodeCamp to a friend?</label>
+            <div class="radio-group">
+                <label><input type="radio" name="recommend" value="Definitely"> Definitely</label>
+                <label><input type="radio" name="recommend" value="Maybe"> Maybe</label>
+                <label><input type="radio" name="recommend" value="Not sure"> Not sure</label>
+            </div>
+
+            <label>What do you like most in FCC:</label>
+            <select id="likeMost">
+                <option value="">Select an option</option>
+                <option>Challenges</option>
+                <option>Community</option>
+                <option>Projects</option>
+            </select>
+
+            <label>Things that should be improved in the future (Check all that apply):</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" value="Front-end Projects"> Front-end Projects</label>
+                <label><input type="checkbox" value="Back-end Projects"> Back-end Projects</label>
+                <label><input type="checkbox" value="Data Visualization"> Data Visualization</label>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('surveyForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let name = document.getElementById('name').value;
+            let email = document.getElementById('email').value;
+            let age = document.getElementById('age').value;
+            let role = document.getElementById('role').value;
+            let recommend = document.querySelector('input[name="recommend"]:checked');
+            let likeMost = document.getElementById('likeMost').value;
+            let improvements = [];
+            document.querySelectorAll('input[type="checkbox"]:checked').forEach(cb => improvements.push(cb.value));
+
+            alert('Name: ' + name + '\nEmail: ' + email + '\nAge: ' + age + '\nRole: ' + role + '\nRecommend: ' + (recommend ? recommend.value : 'Not selected') + '\nLike most: ' + likeMost + '\nImprovements: ' + improvements.join(', '));
+        });
+    </script>
+</body>
+</html>
+```
